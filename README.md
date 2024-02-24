@@ -6,12 +6,14 @@ Explore and ask questions about a GitHub code repository using OpenAI's GPT-3 la
 
 - Python 3.6+
 - OpenAI API key (set in the environment variable `OPENAI_API_KEY`)
+- GitHub PAT with "Repo" scopes enabled (sent in the environment variable `GITHUB_PAT`)
 
 ## Usage
 1. Set the OpenAI API key as an environment variable `OPENAI_API_KEY`.
-2. Run the script: `reporeader.py`
-3. Enter the GitHub URL of the repository to explore.
-4. Ask questions about the repository. Type `exit()` to quit.
+2. Set the GitHub PAT as an environment variable `GITHUB_PAT`. 
+3. Run the script: `app.py`
+4. Enter the GitHub URL of the repository to explore.
+5. Ask questions about the repository. Type `exit()` to quit.
 
 ## Key Features
 - Clones and indexes the contents of a GitHub repository.

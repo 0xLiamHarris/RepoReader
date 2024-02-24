@@ -24,7 +24,7 @@ def main():
                 exit()
 
             print("Repository cloned. Indexing files...")
-            llm = OpenAI(api_key=OPENAI_API_KEY, temperature=0.2)
+            llm = OpenAI(api_key=OPENAI_API_KEY, model=model_name, temperature=0.2)
 
             template = """
             Repo: {repo_name} ({github_url}) | Conv: {conversation_history} | Docs: {numbered_documents} | Q: {question} | FileCount: {file_type_counts} | FileNames: {filenames}

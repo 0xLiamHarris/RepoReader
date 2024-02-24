@@ -11,7 +11,17 @@ from utils import clean_and_tokenize
 
 def clone_github_repo(github_url, local_path):
     try:
-        subprocess.run(['git', 'clone', github_url, local_path], check=True)
+        # Retrieve the PAT from the environment variable
+        github_pat = os.getenv('GITHUB_PAT')
+        if not github_pat:
+            print("GitHub Personal Access Token not found in environment variables.")
+            return False
+
+        # Insert the PAT into the GitHub URL
+        github_url_with_pat = github_url.replace('https://', f'https://{github_pat}@')
+
+        # Run the git clone command with the modified URL
+        subprocess.run(['git', 'clone', github_url_with_pat, local_path], check=True)
         return True
     except subprocess.CalledProcessError as e:
         print(f"Failed to clone repository: {e}")
