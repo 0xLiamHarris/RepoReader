@@ -57,7 +57,7 @@ def load_and_index_files(repo_path):
             print(f"Error loading files with pattern '{glob_pattern}': {e}")
             continue
 
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=3000, chunk_overlap=200)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=500)
 
     split_documents = []
     for file_id, original_doc in documents_dict.items():
