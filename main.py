@@ -1,5 +1,4 @@
 # main.py
-import os
 import tempfile
 from dotenv import load_dotenv
 from config import WHITE, GREEN, RESET_COLOR

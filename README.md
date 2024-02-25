@@ -1,6 +1,6 @@
 # Code Repository Explorer
 
-Explore and ask questions about a GitHub code repository using OpenAI's GPT-3 language model.
+Explore and ask questions about a GitHub code repository using OpenAI's language model.
 
 ## Prerequisites
 

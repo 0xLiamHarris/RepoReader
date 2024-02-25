@@ -1,8 +1,8 @@
 # questions.py
+import os
 from langchain_openai import ChatOpenAI
 from langchain.prompts.chat import ChatPromptTemplate
 from langchain_core.messages import HumanMessage, SystemMessage
-import os
 from config import model_name
 
 # Initialize ChatOpenAI with the model name from config.py
@@ -18,10 +18,10 @@ def ask_question(question, repo_name, github_url):
     # Construct the chat prompt using the system and human messages
     chat_prompt = ChatPromptTemplate.from_messages([system_message, human_message])
 
-    # Generate a response from ChatOpenAI
-    response = chat_model.chat(chat_prompt.format_prompt().to_messages())
+    # Assuming 'invoke' is the correct method for triggering the conversation based on your setup
+    response = chat_model.invoke(chat_prompt.format_prompt().to_messages())
 
-    # Assuming the response object contains a 'content' attribute with the answer
-    answer = response.content  # Adjust based on actual structure of the response object
+    # Extract the answer assuming response object is structured with a 'content' attribute
+    answer = response.content if hasattr(response, 'content') else "No answer could be generated."
 
     return answer
